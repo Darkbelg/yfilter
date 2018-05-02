@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YFilter</title>
+    <style> img {
+            border-top: 10px whitesmoke solid;
+            border-radius: 10% / 15%;
+            margin: 1em;
+            box-shadow: 0 10px 6px -6px #777;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: whitesmoke;
+            color: #333;
+            font-size: 16px;
+        }
+
+        a:hover img {
+            border-top: 10px lightgreen solid;
+            box-shadow: 0 7px 4px #777;
+        }
+        main{
+            margin: auto;
+            width: 1240px;
+            text-align: center;
+        }
+        header{
+            width: 960px;
+            margin: auto;
+        }
+        footer{
+            clear: both;
+            text-align: center;
+        }
+        span{
+            margin-top: 1em;
+            margin-left: 0.90em;
+            position: absolute;
+            background-color: whitesmoke;
+            padding: 1em 1em 1em 0.2em;
+            color: #333333;
+            text-underline: none;
+            border-bottom-right-radius: 50% 75%;
+            border-top-left-radius: 40% 65%;
+            border-top:5px whitesmoke solid;
+            border-left:5px whitesmoke solid;
+
+        }
+        a:hover span{
+            border-top:5px lightgreen solid;
+            border-left:5px lightgreen solid;
+
+        }
+        main a{float: left;}
+    </style>
+</head>
+<body>
+<header>
+    <h1>Youtube Search</h1>
+    <form action="/">
+        <label for="search">Search:</label>
+        <input type="text" name="search" id="search" value="<?php if($search)echo $search ?>">
+        <input type="submit" value="find">
+        <fieldset>
+            <legend>Time</legend>
+                <input type="radio" name="time" id="short" value="short"
+                    <?php if($time == "short")echo "checked" ?>><label for="short">0 untill 4:00</label>
+                <input type="radio" name="time" id="medium" value="medium"
+                    <?php if($time == "medium")echo "checked" ?>><label for="medium">4:00 untill 20:00</label>
+                <input type="radio" name="time" id="long" value="long"
+                    <?php if($time == "long")echo "checked" ?>><label for="long">20:00 and up</label>
+                <input type="radio" name="time" id="any" value="any"
+                    <?php if($time == "any" || !isset($time))echo "checked" ?>><label for="any">any</label>
+        </fieldset>
+    </form>
+</header>
+<?php if ($html) ?>
+<main>
+    <?php echo $html ?>
+</main>
+<?php ?>
+<footer>
+    <p>For support:<a href="https://twitter.com/darkbelg">@Darkbelg</a></p>
+</footer>
+</body>
+</html>
