@@ -6,6 +6,8 @@ if(!isset($_GET['search']) && !isset($_GET['time'])){
 }else{
     $search = $_GET['search'];
     $time = $_GET['time'];
+    /*$channelType = $_GET['channelType'];*/
+    $type = $_GET['type'];
 }
 try{
 $html = "";
@@ -21,7 +23,9 @@ $searchResponse = $service->search->listSearch('id,snippet', array(
     'type' => 'video',
     'safeSearch' => 'none',
     'videoDuration' => $time,
-    'videoDefinition' => 'high'
+    'videoDefinition' => 'high',
+    /*'channelType' => $channelType,*/
+    'type' => $type
     ));
 
 foreach ($searchResponse as $video){
