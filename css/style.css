@@ -28,6 +28,7 @@ fieldset{
 }
 
 main a.search-result {
+    color: #333333;
     display: block;
     clear: both;
     width: 100%;
@@ -45,6 +46,14 @@ main a.search-result {
             -o-linear-gradient(bottom, azure, rgba(0, 0, 0, 0)) 1 100%;
     border-image:
             linear-gradient(to top, azure, rgba(0, 0, 0, 0)) 1 100%;
+}
+main a.search-result:hover {
+    text-decoration: underline;
+    color: #222222;
+}
+
+main a.search-result:visited{
+    color: #777777;
 }
 
 img{

@@ -6,6 +6,7 @@ if(!isset($_GET['search']) && !isset($_GET['time'])){
 }else{
     $search = $_GET['search'];
     $time = $_GET['time'];
+    $maxResults = $_GET['maxResults'];
     /*$channelType = $_GET['channelType'];*/
 //    $type = $_GET['type'];
 //    $eventType = $_GET['eventType'];
@@ -21,12 +22,12 @@ $service = new Google_Service_YouTube($client);
 
 $searchResponse = $service->search->listSearch('id,snippet', array(
     'q' => $search,
-    'maxResults' => '9'
+    'maxResults' => $maxResults,
 //    'safeSearch' => 'none',
-//    'videoDuration' => 'any',
-//    'videoDefinition' => 'high'
-    /*'channelType' => $channelType,*/
-//    'type' => $type
+    'videoDuration' => $time,
+//    'videoDefinition' => 'high',
+//        'channelType' => $channelType,
+    'type' => 'video'
 //    'eventType' => $eventType
     ));
 

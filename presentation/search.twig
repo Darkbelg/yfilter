@@ -15,7 +15,7 @@
         <fieldset>
             <legend>Start Searching</legend>
                 <label for="search">Search:</label>
-                <input type="text" name="search" id="search" required value="{% if search %} {{ search }} {% endif %}">
+                <input type="text" name="search" id="search" required value="{% if search %}{{ search }}{% endif %}">
                 <input type="submit" value="find">
         </fieldset>
         <fieldset>
@@ -29,48 +29,48 @@
                 <input type="radio" name="time" id="any" value="any"
                     {% if time == "any" or not time %} checked {% endif %}><label for="any">Any</label>
         </fieldset>
-        {#
-        <!-- <fieldset>
-            <legend>Channel Type</legend>
-                <input type="radio" name="channelType" id="show" value="show"
-                    {{ /* if($channelType == "show")echo "checked"*/ }}><label for="show">Only retrieve shows</label>
-                <input type="radio" name="channelType" id="any" value="any"
-                    {{ /* if($channelType == "any" || !isset($channelType))echo "checked" */ }}><label
-                    for="any">Return all channels</label>
-        </fieldset> -->
+        {#<fieldset>#}
+            {#<legend>Channel Type</legend>#}
+                {#<input type="radio" name="channelType" id="show" value="show"#}
+                    {#{{ /* if($channelType == "show")echo "checked"*/ }}><label for="show">Only retrieve shows</label>#}
+                {#<input type="radio" name="channelType" id="any" value="any"#}
+                    {#{{ /* if($channelType == "any" || !isset($channelType))echo "checked" */ }}><label#}
+                    {#for="any">Return all channels</label>#}
+        {#</fieldset>#}
 
-        <fieldset>
-            <legend>Type</legend>
-                <input type="radio" name="type" id="channel" value="channel"
-                    {%  if type == "channel" %} "checked" {% endif %}><label for="channel">Channel</label>
-                <input type="radio" name="type" id="playlist" value="playlist"
-                    {%  if type == "playlist" %} "checked" {% endif %}><label for="playlist">Playlist</label>
-                <input type="radio" name="type" id="video" value="video"
-                    {%  if type == "video"|| not type %} "checked" {% endif %}><label for="video">Video</label>
-        </fieldset>
+        {#<fieldset>#}
+            {#<legend>Type</legend>#}
+                {#<input type="radio" name="type" id="channel" value="channel"#}
+                    {#{%  if type == "channel" %} "checked" {% endif %}><label for="channel">Channel</label>#}
+                {#<input type="radio" name="type" id="playlist" value="playlist"#}
+                    {#{%  if type == "playlist" %} "checked" {% endif %}><label for="playlist">Playlist</label>#}
+                {#<input type="radio" name="type" id="video" value="video"#}
+                    {#{%  if type == "video"|| not type %} "checked" {% endif %}><label for="video">Video</label>#}
+        {#</fieldset>#}
 
-<!--        <fieldset>-->
-<!--            <legend>Event Type</legend>-->
-<!--            <input type="radio" name="eventType" id="completed" value="completed"-->
-                {{ /* if($eventType === "completed")echo "checked" */ }}<!--<label
-                for="completed">Completed</label>-->
-<!--            <input type="radio" name="eventType" id="live" value="live"-->
-                {{ /* if($eventType === "live")echo "checked" */ }}<!--<label for="live">Live</label>-->
-<!--            <input type="radio" name="eventType" id="upcoming" value="upcoming"-->
-                {{ /* if($eventType === "upcoming"|| !isset($eventType))echo "checked"*/ }}<!--<label
-                    for="upcoming">Upcoming</label>-->
-<!--        </fieldset>-->
+        {#<fieldset>#}
+            {#<legend>Event Type</legend>#}
+            {#<input type="radio" name="eventType" id="completed" value="completed"-->#}
+                {#{{ if($eventType === "completed")echo "checked" }}<label#}
+                {#for="completed">Completed</label>#}
+            {#<input type="radio" name="eventType" id="live" value="live"-->#}
+                {#{{ if($eventType === "live")echo "checked" */ }}<label for="live">Live</label>#}
+            {#<input type="radio" name="eventType" id="upcoming" value="upcoming"#}
+                {#{{ if($eventType === "upcoming"|| !isset($eventType))echo "checked"*/ }}<label#}
+                    {#for="upcoming">Upcoming</label>#}
+        {#</fieldset>#}
 
         <fieldset>
             <legend>max Results</legend>
-            <input type="number" name="maxResults" id="maxResults" max="50" min="1" value="{{ $maxResults }}9" required><label
+            <input type="number" name="maxResults" id="maxResults" max="50" min="1"
+                   value="{% if maxResults %}{{ maxResults }}{% else %}9{% endif %}"
+                   required><label
                     for="maxResults"></label>
         </fieldset>
-        <fieldset>
-            <legend>Search</legend>
-            <input type="submit" value="find">
-        </fieldset>
-        #}
+        {#<fieldset>#}
+            {#<legend>Search</legend>#}
+            {#<input type="submit" value="find">#}
+        {#</fieldset>#}
     </form>
 </header>
 {#{% if html %}#}
