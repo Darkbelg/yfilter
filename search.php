@@ -7,7 +7,9 @@ if(!isset($_GET['search']) && !isset($_GET['time'])){
     $search = $_GET['search'];
     $time = $_GET['time'];
     /*$channelType = $_GET['channelType'];*/
-    $type = $_GET['type'];
+//    $type = $_GET['type'];
+//    $eventType = $_GET['eventType'];
+//    $maxResults = $_GET['maxResults'];
 }
 try{
 $html = "";
@@ -19,31 +21,37 @@ $service = new Google_Service_YouTube($client);
 
 $searchResponse = $service->search->listSearch('id,snippet', array(
     'q' => $search,
-    'maxResults' => '12',
-    'type' => 'video',
-    'safeSearch' => 'none',
-    'videoDuration' => $time,
-    'videoDefinition' => 'high',
+    'maxResults' => '9'
+//    'safeSearch' => 'none',
+//    'videoDuration' => 'any',
+//    'videoDefinition' => 'high'
     /*'channelType' => $channelType,*/
-    'type' => $type
+//    'type' => $type
+//    'eventType' => $eventType
     ));
 
-foreach ($searchResponse as $video){
-    $videoIds = $video['id']['videoId'];
-}
+
+//foreach ($searchResponse as $video){
+//    $videoIds = $video['id']['videoId'];
+//}
+
 
 foreach ($searchResponse as $thumbnail){
     $id = $thumbnail['id']['videoId'];
-    $statistics = $service->videos->listVideos(
-        'statistics',
-        array(  'id' => $id,
-                'maxResults' => '1'));
+//    if($id !== '') {
+//        $statistics = $service->videos->listVideos(
+//            'statistics',
+//            array('id' => $id,
+//                'maxResults' => '1'));
+//    }
     $html .= '<a href="https://www.youtube.com/watch?v='.$id.'" target="_blank">';
-    $html .= '<span> Likes: '.$statistics["items"][0]["statistics"]["likeCount"].'</span>';
+//    $html .= '<span> Likes: '.$statistics["items"][0]["statistics"]["likeCount"].'</span>';
     $html .= '<img src="'.$thumbnail['snippet']['thumbnails']['medium']['url'].'" />';
     $html .= '</a>';
 
 }
+    $html = $searchResponse;
+
 return $html;
 
 }catch(Google_Exception $ge){

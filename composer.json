@@ -3,7 +3,8 @@
     "description": "filterd youtube search",
     "type": "project",
     "require": {
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "twig/twig": "^2.0"
     },
     "authors": [
         {

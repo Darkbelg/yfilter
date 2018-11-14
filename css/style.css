@@ -1,20 +1,8 @@
-img {
-    border-top: 10px whitesmoke solid;
-    border-radius: 10% / 15%;
-    margin: 1em;
-    box-shadow: 0 10px 6px -6px #777;
-}
-
 body {
     font-family: sans-serif;
     background-color: whitesmoke;
     color: #333;
     font-size: 16px;
-}
-
-a:hover img {
-    border-top: 10px lightgreen solid;
-    box-shadow: 0 7px 4px #777;
 }
 
 main{
@@ -34,32 +22,51 @@ footer{
     text-align: center;
 }
 
-span{
-    margin-top: 1em;
-    margin-left: 0.90em;
-    position: absolute;
-    background-color: whitesmoke;
-    padding: 1em 1em 1em 0.2em;
-    color: #333333;
-    text-decoration: none;
-    border-bottom-right-radius: 50% 75%;
-    border-top-left-radius: 40% 65%;
-    border-top:5px whitesmoke solid;
-    border-left:5px whitesmoke solid;
-
-}
-
-a:hover span{
-    border-top:5px lightgreen solid;
-    border-left:5px lightgreen solid;
-
-}
-
-main a{
-    float: left;
-}
-
 fieldset{
     height: 2em;
     float: left;
+}
+
+main a.search-result {
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 180px;
+    padding: 1em;
+    border-right-width: 3px;
+    border-right-style: solid;
+    -webkit-border-image:
+            -webkit-gradient(linear, 0 100%, 0 0, from(azure), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image:
+            -webkit-linear-gradient(bottom, azure, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+            -moz-linear-gradient(bottom, azure, rgba(0, 0, 0, 0)) 1 100%;
+    -o-border-image:
+            -o-linear-gradient(bottom, azure, rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+            linear-gradient(to top, azure, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+img{
+    float: left;
+    width: 25%;
+    height: auto;
+}
+h2 {
+    float: left;
+    width: 50%;
+    height: auto;
+    text-align: left;
+    padding-left: 1em;
+    /*text-align: left;*/
+}
+main a.search-result p {
+    float: left;
+    width: 50%;
+    height: auto;
+    text-align: left;
+    padding-left: 1em;
+}
+a:hover {
+    background: azure;
 }
